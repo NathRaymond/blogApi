@@ -1,0 +1,328 @@
+{
+  "info": {
+    "_postman_id": "c7da419c-37e0-4984-bb2b-b9a01951919b",
+    "name": "New Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Blog API Collection",
+      "item": [
+        {
+          "name": "View All Blogs",
+          "id": "02fd0e89-468e-4282-8715-7d9d3cb5063c",
+          "protocolProfileBehavior": { "disableBodyPruning": true },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "CourierPlus@321",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/blogs",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["api", "blogs"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Blog",
+          "id": "9352acae-38e4-4a78-a060-a60610e9c965",
+          "protocolProfileBehavior": { "disableBodyPruning": true },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "CourierPlus@321",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Protest in Lagos, Nigeria\",\r\n    \"content\": \"The protest has been peaceful, thank God, i got the Job in CourierPlus\"\r\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/blogs?title=Protest in Lagos&content=The protest has been peaceful, thank God, i got the Job",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["api", "blogs"],
+              "query": [
+                { "key": "title", "value": "Protest in Lagos" },
+                {
+                  "key": "content",
+                  "value": "The protest has been peaceful, thank God, i got the Job"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Show Blog by ID",
+          "id": "9799fb66-20ea-4e9d-8e1f-6d5dbbe13943",
+          "protocolProfileBehavior": { "disableBodyPruning": true },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "CourierPlus@321",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/blogs/{id}",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["api", "blogs", "{id}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Blog",
+          "id": "78623df1-e89d-4740-86c2-0858f8f594a7",
+          "protocolProfileBehavior": { "disableBodyPruning": true },
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "CourierPlus@321",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\": 1,\r\n    \"title\": \"Protest in Lagos, Nigeria\",\r\n    \"content\": \"The protest has been peaceful, thank God, i got the Job in CourierPlus\",\r\n    \"created_at\": \"2024-08-02T10:32:36.000000Z\",\r\n    \"updated_at\": \"2024-08-02T10:32:36.000000Z\",\r\n    \"posts\": []\r\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/blogs/{id}",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["api", "blogs", "{id}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Blog",
+          "id": "c2e2dd70-6af5-4387-8a0d-dc2807f8dfea",
+          "protocolProfileBehavior": { "disableBodyPruning": true },
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "CourierPlus@321",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/blogs/{id}",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["api", "blogs", "{id}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Post under a Blog",
+          "id": "18e6914a-5e13-4dd8-b0f1-2a9a2d26d186",
+          "protocolProfileBehavior": { "disableBodyPruning": true },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "CourierPlus@321",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"The protest is going well\",\r\n    \"content\": \"No record of killing, GLory be to God\"\r\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/blogs/{blogId}/posts",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["api", "blogs", "{blogId}", "posts"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "View All Posts under a Blog",
+          "id": "a0e10511-4315-466c-9791-ce4f5e86ccea",
+          "protocolProfileBehavior": { "disableBodyPruning": true },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "CourierPlus@321",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/blogs/{blogId}/posts",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["api", "blogs", "{blogId}", "posts"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Show Post",
+          "id": "db9d7910-8809-449b-a306-12c4e4ca68ef",
+          "protocolProfileBehavior": { "disableBodyPruning": true },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "CourierPlus@321",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/blogs/{blogId}/posts/{id}",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["api", "blogs", "{blogId}", "posts", "{id}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Post",
+          "id": "7b5a6548-e799-498c-ac2b-3910805c1a99",
+          "protocolProfileBehavior": { "disableBodyPruning": true },
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "CourierPlus@321",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": " {\r\n        \"id\": 1,\r\n        \"blog_id\": 1,\r\n        \"title\": \"The protest is going well, Nigeria will be fine\",\r\n        \"content\": \"God bless nigeria...No record of killing, GLory be to God\"\r\n    }",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/blogs/{blogId}/posts/{id}",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["api", "blogs", "{blogId}", "posts", "{id}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Post",
+          "id": "91e2a29f-cdec-45ba-9ab1-699b4f71e190",
+          "protocolProfileBehavior": { "disableBodyPruning": true },
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "CourierPlus@321",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/blogs/{blogId}/posts/{id}",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["api", "blogs", "{blogId}", "posts", "{id}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Like Post",
+          "id": "f851f693-782f-4716-aae3-4b98622fb0aa",
+          "protocolProfileBehavior": { "disableBodyPruning": true },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "CourierPlus@321",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"user_id\": 1\r\n    }",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/posts/{postId}/like",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["api", "posts", "{postId}", "like"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Comment on Post",
+          "id": "290bf405-54fb-455f-9a07-191882536d30",
+          "protocolProfileBehavior": { "disableBodyPruning": true },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "CourierPlus@321",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": " {\r\n        \"user_id\": 1,\r\n        \"content\":\"Here is the Comement, thank God it works\"\r\n    }",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/posts/{postId}/comment",
+              "protocol": "http",
+              "host": ["127", "0", "0", "1"],
+              "port": "8000",
+              "path": ["api", "posts", "{postId}", "comment"]
+            }
+          },
+          "response": []
+        }
+      ],
+      "id": "a9917c0a-2880-408c-b6dc-f1a17912402a"
+    }
+  ]
+}
